@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= booklist.authorname %> - <%= booklist.booktitle %> - Paris Dauphine - Emerging Technologies </title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <h1>Library Book list - Book details <a class='action' href="/">back</a></h1>
+  <h2> <%= booklist.authorname %><a class='action' href="/book/personality/<%= booklist._id %>"> Analyze the personality</a></h2>
+  <%= booklist.authorbio %>
+  <blockquote><%= booklist.authorquote %>    </blockquote>
+  <h3><%= booklist.booktitle %>  <a class='action' href="/book/translate/<%= booklist._id %>"> Tranlate into English%></a> </h3>
+  <b>Publication Date :</b> <%= booklist.bookpubdate %>
+
+  <div>  <%= booklist.booksummary %></div>
+
+  <div class='full' >
+    <%- include ../partial/footer %>
+  </div>
+</body>
+</html>

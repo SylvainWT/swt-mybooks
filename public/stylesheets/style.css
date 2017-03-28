@@ -1,15 +1,38 @@
 /* style.css
- * This file provides css styles.
- */
+* This file provides css styles.
+*/
 
 body,html {
-	background-color: #3b4b54; width : 100%;
-	height: 100%;
-	margin: 0 auto;
+	background-color: #3b4b54;
+
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	color: #ffffff;
 }
 
+h1 {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+input
+{
+	width: 90%;
+}
+
+textarea
+{
+	width: 90%;
+	height : 100px;
+}
+
+label
+{
+	display: block;
+	width: 150px;
+}
+/*
+* Standard link : Open a specific book in the main page for example
+*/
 a {
 	text-decoration: none;
 	color: #00aed1;
@@ -19,64 +42,107 @@ a:hover {
 	text-decoration: underline;
 }
 
-.newappIcon {
-	padding-top: 10%;
-	display: block;
-	margin: 0 auto;
-	padding-bottom: 2em;
-	max-width:200px;
+/*
+* Button-like link : action link in the pages ; Remove, back button
+*/
+
+a.action {
+	font-family: Arial;
+	font-size: 10px;
+	padding: 1px 2px 1px 2px;
+	color: #3cb0fd;
+	border-color:#3b4b54;
+	border-style: solid;
+	border-width: 1px;
 }
 
-h1 {
-	font-weight: bold;
-	font-size: 2em;
+a.action:hover {
+	color: #3b4b54;
+	border-color:#3cb0fd;
+	background-color:#3cb0fd;
+	border-style: solid;
+	border-width: 1px;
 }
 
-.leftHalf {
-	float: left;
-	background-color: #26343f;
+/*
+* DIV organisation : 3-Columns-style for translation page, 2columns style for the main page
+*/
+
+.half
+{
 	width: 45%;
-	height: 100%;
+	padding: 10px 10px 10px 10px;
+	float:left;
+}
+.full
+{
+	width: 90%;
+	float:left;
+}
+.languagedetection
+{
+	color: #5aaafa;
+	width: 10%;
+	padding: 10px 10px 10px 10px;
+	border-width: 10px;
+	float:left;
 }
 
-.rightHalf {
-	float: right;
-	width: 55%;
+.original
+{
+	width: 40%;
+	padding: 10px 10px 10px 10px;
+	float:left;
+}
+
+.translation
+{
+	padding: 10px 10px 10px 10px;
+	width: 40%;
+	float:left;
 	background-color: #313f4a;
-	height: 100%;
-	overflow:auto;
 }
 
-.blue {
-	color: #00aed1;
+/*
+* Button : Button in form : "Save" in the main page
+*/
+.btn {
+	background: #3498db;
+	background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+	background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+	background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+	background-image: -o-linear-gradient(top, #3498db, #2980b9);
+	background-image: linear-gradient(to bottom, #3498db, #2980b9);
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 12px;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	border:none;
+	width : 100px;
+
 }
 
+.btn:hover {
+	background: #3cb0fd;
+	background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+	text-decoration: none;
 
-table {
-	table-layout: fixed;
-	width: 800px;
-	margin: 0 auto;
-	word-wrap: break-word;
-	padding-top:10%;
 }
 
-th {
-	border-bottom: 1px solid #000;
+/*
+* Footer : Style for the footer
+*/
+.footer
+{
+	width: 90%;
+	border:0px;
+	border-top: 1px;
+	border-style: solid;
+	margin: 10px 10px 10px 10px;
+	float:left;
 }
-
-th, td {
-	text-align: left;
-	padding: 2px 20px;
-}
-
-.env-var {
-	text-align: right;
-	border-right: 1px solid #000;
-	width: 30%;
-}
-
-pre {
-	padding: 0;
-	margin: 0;
-}
-

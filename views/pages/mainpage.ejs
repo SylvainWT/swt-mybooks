@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library Book List - Paris Dauphine - Emerging Technologies </title>
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+  <h1>Library Book list</h1>
+
+  <form action="/book/add/" method="post">
+    <div class='half' >
+      <label> Author: </label><input type="text" name="authorname" id="authorname" required />
+      <label>Biography: </label><textarea name="authorbio" id="authorbio"></textarea>
+      <label>Quote:</label><textarea name="authorquote" id="authorquote"></textarea>
+    </div>
+
+    <div class='half' >
+      <input type="hidden" name="type" id="type"   value='book' required />
+      <label>Book title: </label><input type="text" name="booktitle" id="booktitle" required />
+      <label>Publication Date </label><input type="date" name="bookpubdate" id="bookpubdate" required />
+      <label>Summary: </label> <textarea name="booksummary" id="booksummary"></textarea>
+      <input class='btn' type="submit" value='Save'>
+    </div>
+  </form>
+
+  <div class='full'>
+    <b>The Book List </b>
+    <ul>
+      <% booklist.forEach(function(book, index) { %>
+        <li>
+          <a class='action' href="/book/remove/<%= book._id %>/<%= book._rev %>">Remove</a>
+          <b> <%= book.authorname %> </b>
+          <a href="/book/open/<%= book._id %>"><%= book.booktitle %></a> [<%= book.bookpubdate %> ]
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+
+    <div class='full' >
+      <%- include ../partial/footer %>
+    </div>
+  </body>
+  </html>
