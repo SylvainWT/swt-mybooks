@@ -1,0 +1,12 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  name: swt-mybooks
+  host: swt-mybooks
+  disk_quota: 1024M
+  services:
+  - Cloudant NoSQL DB-pr
+  - Language Translator-32
+  - Personality Insights-oc
