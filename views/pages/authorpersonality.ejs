@@ -11,8 +11,26 @@
   <p><b>Publication Date :</b> <%= booklist.bookpubdate %></p>
 
   <div class='half'>Personality Insight
-  ADD YOUR CODE HERE
-  </div>
+     <ul><% authorpersonality.tree.children.forEach(function(element, index) { %>
+       <li>
+         <b> <%= element.name %> </b>
+         <ul><% element.children.forEach(function(element2, index) { %>
+           <li>
+             <b> <%= element2.name %> </b> : <%= Number((element2.percentage)*100).toFixed(1) %> %
+
+             <ul><% element2.children.forEach(function(element3, index) { %>
+               <li>
+                 <b> <%= element3.name %> </b> : <%= Number((element3.percentage)*100).toFixed(1) %> %
+               </li>
+               <% }); %>
+             </ul>
+           </li>
+           <% }); %>
+         </ul>
+       </li>
+       <% }); %>
+     </ul>
+   </div>
 
   <div class='half'>
     <%= booklist.authorquote %>
